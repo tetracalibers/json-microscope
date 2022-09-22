@@ -12,12 +12,12 @@
     "/dist",
     "/types"
   ],
-  "main": "./dist/json-microscope.cjs",
+  "main": "./dist/json-microscope.cjs.js",
   "module": "./dist/json-microscope.es.js",
   "exports": {
     ".": {
       "import": "./dist/json-microscope.es.js",
-      "require": "./dist/json-microscope.cjs"
+      "require": "./dist/json-microscope.cjs.js"
     }
   },
   "scripts": {
@@ -30,6 +30,7 @@
     "format": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\""
   },
   "devDependencies": {
+    "@types/shelljs": "^0.8.11",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
     "@vitejs/plugin-react": "^2.1.0",
@@ -39,5 +40,9 @@
     "prettier": "^2.7.1",
     "typescript": "^4.6.4",
     "vite": "^3.1.0"
+  },
+  "dependencies": {
+    "json-format": "^1.0.1",
+    "shelljs": "^0.8.5"
   }
 }
