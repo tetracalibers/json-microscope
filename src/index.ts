@@ -12,5 +12,5 @@ export const logJson = (source: object) => {
 }
 
 export const fromJson = (source: object) => {
-  return JSON.parse(JSON.stringify(source))
+  return JSON.parse(JSON.stringify(source)).default
 }
