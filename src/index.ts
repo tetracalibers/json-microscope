@@ -1,5 +1,3 @@
-import shell from 'shelljs'
-const { ShellString } = shell
 import jsonFormat from 'json-format'
 const config_jsonFormat = {
   type: 'space',
@@ -11,10 +9,6 @@ export const toJson = (source: object): string =>
 
 export const logJson = (source: object) => {
   console.log(toJson(source))
-}
-
-export const dumpJson = (source: object) => (filePath: string) => {
-  new ShellString(toJson(source)).to(filePath)
 }
 
 export const fromJson = (source: object) => {
