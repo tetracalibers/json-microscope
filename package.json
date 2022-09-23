@@ -12,12 +12,12 @@
     "/dist",
     "/types"
   ],
-  "main": "./dist/json-microscope.cjs.js",
+  "main": "./dist/json-microscope.umd.js",
   "module": "./dist/json-microscope.es.js",
   "exports": {
     ".": {
       "import": "./dist/json-microscope.es.js",
-      "require": "./dist/json-microscope.cjs.js"
+      "require": "./dist/json-microscope.umd.js"
     }
   },
   "scripts": {

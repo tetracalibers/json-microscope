@@ -7,8 +7,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'json-microscope',
-      fileName: (format) => `json-microscope.${format}.js`,
-      formats: ['cjs', 'es']
+      fileName: (format) => `json-microscope.${format}.js`
     },
     rollupOptions: {
       external: ['react', 'react-dom']
