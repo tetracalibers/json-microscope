@@ -1,11 +1,11 @@
 import { toJson, fromJson, logJson } from './common'
 
-const dumpJson = async (filePath: string, data: any) => {
-  const isNode = process.title !== 'browser'
+const isNode = () => process.title !== 'browser'
 
+const dumpJson = async (filePath: string, data: any) => {
   const path = filePath.endsWith('.json') ? filePath : filePath + '.json'
 
-  if (isNode) {
+  if (isNode()) {
     const fs = await import('fs-extra')
     await fs.outputFile(path, toJson(data))
   } else {
