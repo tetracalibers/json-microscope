@@ -1,7 +1,8 @@
 import { toJson, fromJson, logJson } from './common'
 
 const dumpJson = async (filePath: string, data: any) => {
-  const isNode = process !== undefined && require !== undefined
+  const isNode =
+    typeof process !== 'undefined' && typeof require !== 'undefined'
 
   if (isNode) {
     const fs = await import('fs-extra')
