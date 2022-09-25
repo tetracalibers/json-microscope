@@ -1,10 +1,11 @@
-import * as jsonFormat from 'json-format'
+import jsonFormat from 'json-format'
+const config_jsonFormat = {
+  type: 'space',
+  size: 2
+}
 
 export const toJson = (source: object): string =>
-  jsonFormat(source, {
-    type: 'space',
-    size: 2
-  })
+  jsonFormat(source, config_jsonFormat)
 
 export const logJson = (source: object) => {
   console.log(toJson(source))
