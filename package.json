@@ -9,29 +9,31 @@
   "type": "module",
   "files": [
     "dist/*",
-    "types"
+    "types/*"
   ],
-  "types": "./types/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./types/browser.d.ts",
-        "default": "./dist/json-microscope-browser.es.js"
-      },
-      "require": {
-        "types": "./types/browser.d.ts",
-        "default": "./dist/json-microscope-browser.umd.js"
-      }
+      "import": "./dist/json-microscope-browser.es.js",
+      "require": "./dist/json-microscope-browser.umd.js",
+      "types": "./types/browser.d.ts"
     },
     "./node": {
-      "import": {
-        "types": "./types/node.d.ts",
-        "default": "./dist/json-microscope-node.es.js"
-      },
-      "require": {
-        "types": "./types/node.d.ts",
-        "default": "./dist/json-microscope-node.cjs.js"
-      }
+      "types": "./types/node.d.ts",
+      "import": "./dist/json-microscope-node.es.js",
+      "require": "./dist/json-microscope-node.cjs.js"
+    }
+  },
+  "types": "./types/node.d.ts",
+  "main": "./dist/json-microscope-node.cjs.js",
+  "module": "./dist/json-microscope-node.es.js",
+  "typesVersions": {
+    "*": {
+      "node": [
+        "./types/node.d.ts"
+      ],
+      "*": [
+        "./types/browser.d.ts"
+      ]
     }
   },
   "scripts": {
@@ -54,7 +56,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "prettier": "^2.7.1",
-    "typescript": "^4.6.4",
+    "typescript": "^4.8.3",
     "vite": "^3.1.0"
   },
   "dependencies": {
