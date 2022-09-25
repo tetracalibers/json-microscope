@@ -9,20 +9,26 @@
   "type": "module",
   "types": "./types/index.d.ts",
   "files": [
-    "/dist",
-    "/types"
+    "dist/*",
+    "index.d.ts",
+    "browser.d.ts",
+    "node.d.ts"
   ],
-  "main": "./dist/json-microscope.umd.js",
-  "module": "./dist/json-microscope.es.js",
   "exports": {
     ".": {
-      "import": "./dist/json-microscope.es.js",
-      "require": "./dist/json-microscope.umd.js"
+      "import": "./dist/json-microscope-browser.es.js",
+      "require": "./dist/json-microscope-browser.umd.js"
+    },
+    "./node": {
+      "import": "./dist/json-microscope-node.es.js",
+      "require": "./dist/json-microscope-node.cjs.js"
     }
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build:browser": "LIB_NAME=browser vite build",
+    "build:node": "LIB_NAME=node vite build",
+    "build": "tsc && yarn build:browser && yarn build:node",
     "watch": "vite build --watch",
     "prepare": "yarn build",
     "lint": "eslint --ext .tsx,.ts src/",
@@ -30,7 +36,7 @@
     "format": "prettier --write \"**/*.+(js|json|yml|ts|tsx)\""
   },
   "devDependencies": {
-    "@types/shelljs": "^0.8.11",
+    "@types/fs-extra": "^9.0.13",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
     "@vitejs/plugin-react": "^2.1.0",
@@ -42,6 +48,7 @@
     "vite": "^3.1.0"
   },
   "dependencies": {
+    "fs-extra": "^10.1.0",
     "json-format": "^1.0.1"
   }
 }
