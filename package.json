@@ -10,9 +10,7 @@
   "types": "./types/index.d.ts",
   "files": [
     "dist/*",
-    "index.d.ts",
-    "browser.d.ts",
-    "node.d.ts"
+    "types/*"
   ],
   "exports": {
     ".": {
