@@ -11,14 +11,27 @@
     "dist/*",
     "types"
   ],
+  "types": "./types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/json-microscope-browser.es.js",
-      "require": "./dist/json-microscope-browser.umd.js"
+      "import": {
+        "types": "./types/browser.d.ts",
+        "default": "./dist/json-microscope-browser.es.js"
+      },
+      "require": {
+        "types": "./types/browser.d.ts",
+        "default": "./dist/json-microscope-browser.umd.js"
+      }
     },
     "./node": {
-      "import": "./dist/json-microscope-node.es.js",
-      "require": "./dist/json-microscope-node.cjs.js"
+      "import": {
+        "types": "./types/node.d.ts",
+        "default": "./dist/json-microscope-node.es.js"
+      },
+      "require": {
+        "types": "./types/node.d.ts",
+        "default": "./dist/json-microscope-node.cjs.js"
+      }
     }
   },
   "scripts": {
