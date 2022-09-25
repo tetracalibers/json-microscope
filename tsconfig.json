@@ -20,6 +20,6 @@
     "jsx": "react-jsx"
   },
   "include": ["src"],
-  "exclude": ["src/experimental", "src/stories"],
+  "exclude": ["src/experimental", "src/stories", "src/__test__"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

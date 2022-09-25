@@ -1,8 +1,7 @@
 import { toJson, fromJson, logJson } from './common'
 
 const dumpJson = async (filePath: string, data: any) => {
-  const isNode =
-    typeof process !== 'undefined' && typeof require !== 'undefined'
+  const isNode = process.title !== 'browser'
 
   const path = filePath.endsWith('.json') ? filePath : filePath + '.json'
 

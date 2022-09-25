@@ -3,6 +3,7 @@ src
 
 ## node modules folder
 node_modules
+__test__
 
 ## incase you have a git repositiory initiated
 .git
