@@ -1,6 +1,11 @@
 {
   "name": "json-microscope",
   "description": "Collection of tools to convert objects to JSON and peek into their contents",
+  "keywords": [
+    "json",
+    "object",
+    "debug"
+  ],
   "author": {
     "name": "tomixy"
   },
